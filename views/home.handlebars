@@ -1,0 +1,30 @@
+{{!-- {{This is the home page handlebars}} --}}
+
+<div class="row">
+  <div class="col-sm-12">
+    <form id="static-form" method="post">
+
+      <div class="form-group">
+        <label for="number" >Number </label>
+        <input type="number" class="form-control" id="number" name="number" placeholder="Enter a number" value="{{firstNumber}}">
+      </div>
+  
+      <div class="form-group hidden" id="error-container">
+        <!--<div class="alert alert-danger text-goes-here" id= 'error-child'>
+        </div> -->
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+      
+      <div class="form-group hidden" id="result-container">
+        <ol id="results">
+
+        </ol>
+        <div class="alert alert-success text-goes-here">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
