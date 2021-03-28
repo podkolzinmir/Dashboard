@@ -1,1 +1,19 @@
 {{!-- {{This is the graph page handlebars}} --}}
+<p> Graph Page</p>
+<button id="graph-info">Graph Test</button>
+<script>
+    $('#graph-info').click(function () {
+        $.ajax({
+            type: 'POST',
+            url: "/graph/test",
+            data: {},
+            success: function (data) {
+                console.log('success')
+            },
+            error: function (data, error, xhr) {
+                console.log('error')
+            },
+            dataType: 'json'
+        });
+    });
+</script>

@@ -1,5 +1,19 @@
 {{!-- {{This is the home page handlebars}} --}}
-
-        <p>
-            Main page
-        </p>
+<p> Main Page</p>
+<button id="home-info">Home Test</button>
+<script>
+    $('#home-info').click(function () {
+        $.ajax({
+            type: 'POST',
+            url: "/test",
+            data: {},
+            success: function (data) {
+                console.log('success')
+            },
+            error: function (data, error, xhr) {
+                console.log('error')
+            },
+            dataType: 'json'
+        });
+    });
+</script>

@@ -1,1 +1,19 @@
 {{!-- {{This is the settings page handlebars}} --}}
+<p>Settings Page</p>
+<button id="settings-info">Settings Test</button>
+<script>
+    $('#settings-info').click(function () {
+        $.ajax({
+            type: 'POST',
+            url: "/settings/test",
+            data: {},
+            success: function (data) {
+                console.log('success')
+            },
+            error: function (data, error, xhr) {
+                console.log('error')
+            },
+            dataType: 'json'
+        });
+    });
+</script>

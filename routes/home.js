@@ -11,4 +11,9 @@ router.get("/", async (_, res) => {
   }
 });
 
+router.post("/test", async (req, res) => {
+  console.log("home test route was hit ");
+  return res.status(200).send({ success: true });
+});
+
 module.exports = router;
