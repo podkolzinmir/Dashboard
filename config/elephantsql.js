@@ -11,15 +11,18 @@ client.connect(function(err) {
     return console.error('Could not connect to db', err);
   }
   
+  async function getData(){
   client.query('SELECT * FROM train1', function(err, result) {
     if(err) {
       return console.error('error running query', err);
     }
-    console.log(result.rows[1]);  });
+    return result.rows[1];
+  }
+)};
 
 
     module.exports = {
-      query: (text, params) => client.query(text, params),
+      getData
     }
-    
+
 });
