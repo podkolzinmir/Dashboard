@@ -8,7 +8,7 @@ router.get('/', async (_, res) => {
     try {
       res.render('graph');
     } catch (e) {
-      res.status(404).json({ error: "Main page not found" })
+      res.status(404).json({ error: "Graph page not found" })
     }
   })
 

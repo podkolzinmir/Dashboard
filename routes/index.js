@@ -9,7 +9,7 @@ const homeRoutes = require('./home')
 const constructorMethod = (app) => {
     app.use('/settings', settingRoutes);
     app.use('/graph', graphRoutes);
-    app.use('/home', homeRoutes);
+    app.use('/', homeRoutes);
 
 
     app.use('*', (req, res) => {
