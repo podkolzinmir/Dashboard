@@ -12,3 +12,37 @@
   body {
     background-color: #d4d4d4;
   }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+
+ /* this is for side by side if we want
+  .slider{
+    display: inline-flex;
+ }
+*/
+
+.slidecontainer{
+    padding: 2px;
+    margin-bottom: 30px;
+}
+
+.slider{
+    margin-bottom: 0px;
+}
+
+.middle{
+    text-align: center;
+    margin-top: 20px;
+  }
+
+.text{
+display: inline-flex;
+}
+
+#date {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
