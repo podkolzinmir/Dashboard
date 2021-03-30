@@ -1,0 +1,14 @@
+.navbar-toggler {
+    opacity: 0.5;
+    color: black;
+  }
+
+  #nav {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    margin-top: 0px;
+  }
+
+  body {
+    background-color: #d4d4d4;
+  }
