@@ -2,20 +2,22 @@
 
 
 {{!-- {{Navigation bar}} --}}
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-        <a class="nav-link" href="./">Home</a>
+      <a class="nav-link" href="./">Home</a>
 
       <li class="nav-item active">
         <a class="nav-link" href="./graph">Reports</a>
       </li>
-    <a class="nav-link" href="./settings">Settings</a>
+      <a class="nav-link" href="./settings">Settings</a>
 
     </ul>
   </div>
@@ -24,18 +26,18 @@
 <p> Graph Page</p>
 <button id="graph-info">Graph Test</button>
 <script>
-    $('#graph-info').click(function () {
-        $.ajax({
-            type: 'POST',
-            url: "/graph/test",
-            data: {},
-            success: function (data) {
-                console.log('success')
-            },
-            error: function (data, error, xhr) {
-                console.log('error')
-            },
-            dataType: 'json'
-        });
+  $('#graph-info').click(function () {
+    $.ajax({
+      type: 'POST',
+      url: "/graph/test",
+      data: {},
+      success: function (data) {
+        console.log('success')
+      },
+      error: function (data, error, xhr) {
+        console.log('error')
+      },
+      dataType: 'json'
     });
+  });
 </script>

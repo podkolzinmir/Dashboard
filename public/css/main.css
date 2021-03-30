@@ -1,0 +1,13 @@
+.navbar-toggler {
+  margin: 10px;
+  opacity: 0.2;
+  border-radius: 2px;
+  color: black;
+}
+
+main .card {
+  margin-bottom: 0px;
+}
+.card-title {
+  color: purple;
+}
