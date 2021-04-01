@@ -4,19 +4,21 @@
   }
 
 .card {
-    padding: 5px;
     width: 60%;
     height: 90%;
     margin: 30px;
-    margin-left: 50px;
-
+    margin-left: 70px;
+    background-color: #f0f0f0f5;
 }
 .card-title{
-    color: rgb(201, 46, 46);
+    color: rgb(228, 222, 222);
+    background-color: #1ea858;
+    padding: 20px;
+    margin-left: 0px;
 }
 
 body {
-    background-color: #d4d4d4;
+    background-color: #413e3e;
   }
 
 .row {
@@ -28,8 +30,15 @@ body {
   margin-bottom: 10px;
   padding-left: 20px;
   margin-top: 0px;
+  
 }
+
 
 #date {
   margin-left: 20px;
+  color: whitesmoke;
+}
+
+hr{
+  border: 1px solid rgb(231, 222, 222);
 }
