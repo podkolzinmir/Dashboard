@@ -5,15 +5,15 @@
 
 {{!-- {{Navigation bar}} --}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-        <a class="nav-link" href="./">Home</a>
-        <a class="nav-link" href="./graph">Reports</a>
+      <a class="nav-link" href="./">Home</a>
+      <a class="nav-link" href="./graph">Reports</a>
 
       <li class="nav-item active">
         <a class="nav-link" href="./settings">Settings</a>
@@ -28,106 +28,106 @@
 <hr>
 
 <div class="middle">
-{{!-- {{Slider 1}} --}}
-<div class="slidecontainer">
-  <p class="slider"> Number of masks detected </p>
-    <p id="num" class="slider"> <span id="demo"></span></p> 
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-</div>
+  {{!-- {{Slider 1}} --}}
+  <div class="slidecontainer">
+    <p class="slider"> Number of masks detected </p>
+    <p id="num" class="slider"> <span id="demo"></span></p>
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  </div>
 
-<script>
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+  <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
 
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-</script>
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+    }
+  </script>
 
-{{!-- {{Slider 2}} --}}
-<div class="slidecontainer">
-  <p class="slider"> Number of people detected </p>
+  {{!-- {{Slider 2}} --}}
+  <div class="slidecontainer">
+    <p class="slider"> Number of people detected </p>
     <p id="num" class="slider"> <span id="demo2"></span></p>
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
-</div>
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+  </div>
 
-<script>
-var slider2 = document.getElementById("myRange2");
-var output2 = document.getElementById("demo2");
-output2.innerHTML = slider2.value;
+  <script>
+    var slider2 = document.getElementById("myRange2");
+    var output2 = document.getElementById("demo2");
+    output2.innerHTML = slider2.value;
 
-slider2.oninput = function() {
-  output2.innerHTML = this.value;
-}
-</script>
+    slider2.oninput = function () {
+      output2.innerHTML = this.value;
+    }
+  </script>
 
-{{!-- {{Slider 3}} --}}
-<div class="slidecontainer">
-  <p class="slider"> Average space (ft) </p>
+  {{!-- {{Slider 3}} --}}
+  <div class="slidecontainer">
+    <p class="slider"> Average space (ft) </p>
     <p id="num" class="slider"> <span id="demo3"></span></p>
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange3">
-</div>
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange3">
+  </div>
 
-<script>
-var slider3 = document.getElementById("myRange3");
-var output3 = document.getElementById("demo3");
-output3.innerHTML = slider3.value;
+  <script>
+    var slider3 = document.getElementById("myRange3");
+    var output3 = document.getElementById("demo3");
+    output3.innerHTML = slider3.value;
 
-slider3.oninput = function() {
-  output3.innerHTML = this.value;
-}
-</script>
+    slider3.oninput = function () {
+      output3.innerHTML = this.value;
+    }
+  </script>
 
-{{!-- {{Slider 4}} --}}
+  {{!-- {{Slider 4}} --}}
   <p class="slider"> No. Groups/hour </p>
-<div class="slidecontainer">
-  <p id="num" class="slider"> <span id="demo4"></span></p>
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange4">
-</div>
+  <div class="slidecontainer">
+    <p id="num" class="slider"> <span id="demo4"></span></p>
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange4">
+  </div>
 
-<script>
-var slider4 = document.getElementById("myRange4");
-var output4 = document.getElementById("demo4");
-output4.innerHTML = slider4.value;
+  <script>
+    var slider4 = document.getElementById("myRange4");
+    var output4 = document.getElementById("demo4");
+    output4.innerHTML = slider4.value;
 
-slider4.oninput = function() {
-  output4.innerHTML = this.value;
-}
-</script>
+    slider4.oninput = function () {
+      output4.innerHTML = this.value;
+    }
+  </script>
 
-{{!-- {{Slider 5}} --}}
-<div class="slidecontainer">
-  <p class="slider"> No. Violations/hour </p>
+  {{!-- {{Slider 5}} --}}
+  <div class="slidecontainer">
+    <p class="slider"> No. Violations/hour </p>
     <p id="num" class="slider"> <span id="demo5"></span></p>
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange5">
-</div>
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange5">
+  </div>
 
-<script>
-var slider5 = document.getElementById("myRange5");
-var output5 = document.getElementById("demo5");
-output5.innerHTML = slider5.value;
+  <script>
+    var slider5 = document.getElementById("myRange5");
+    var output5 = document.getElementById("demo5");
+    output5.innerHTML = slider5.value;
 
-slider5.oninput = function() {
-  output5.innerHTML = this.value;
-}
-</script>
+    slider5.oninput = function () {
+      output5.innerHTML = this.value;
+    }
+  </script>
 </div>
 
 <button id="settings-info">Settings Test</button>
 <script>
-    $('#settings-info').click(function () {
-        $.ajax({
-            type: 'POST',
-            url: "/settings/test",
-            data: {},
-            success: function (data) {
-                console.log('success')
-            },
-            error: function (data, error, xhr) {
-                console.log('error')
-            },
-            dataType: 'json'
-        });
+  $('#settings-info').click(function () {
+    $.ajax({
+      type: 'POST',
+      url: "/settings/test",
+      data: {},
+      success: function (data) {
+        console.log('success')
+      },
+      error: function (data, error, xhr) {
+        console.log('error')
+      },
+      dataType: 'json'
     });
+  });
 </script>

@@ -1,6 +1,6 @@
 {{!-- {{This is the graph page handlebars}} --}}
 
-<link rel="stylesheet" href="/public/main.css" >
+<link rel="stylesheet" href="/public/main.css">
 
 
 {{!-- {{Navigation bar}} --}}
@@ -27,7 +27,19 @@
 
 <p> Graph Page</p>
 <button id="graph-info">Graph Test</button>
+{{#if data}}
+<ul id="lmao" style="color:white;display:none">
+  {{#each data}}
+  <li>{{this.time}}, {{this.val}}</li>
+  {{/each}}
+</ul>
+{{else}}
+<p><em>There are currently no polls.</em></p>
+{{/if}}
 <script>
+  $(document).ready(function () {
+    console.log($("#lmao").text())
+  })
   $('#graph-info').click(function () {
     $.ajax({
       type: 'POST',
