@@ -176,7 +176,19 @@ var myChart4 = new Chart(ctx, {
 </div>
 
 <button id="graph-info">Graph Test</button>
+{{#if data}}
+<ul id="lmao" style="color:white;display:none">
+  {{#each data}}
+  <li>{{this.time}}, {{this.val}}</li>
+  {{/each}}
+</ul>
+{{else}}
+<p><em>There is currently no data being sent</em></p>
+{{/if}}
 <script>
+  $(document).ready(function () {
+    console.log($("#lmao").text())
+  })
   $('#graph-info').click(function () {
     $.ajax({
       type: 'POST',
