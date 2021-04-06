@@ -6,13 +6,13 @@
 .card {
     width: 60%;
     height: 90%;
-    margin: 30px;
-    margin-left: 70px;
+    margin: 60px;
+    margin-left: 90px;
     background-color: #f0f0f0f5;
 }
 .card-title{
     color: rgb(228, 222, 222);
-    background-color: #2e2e2e;
+    background-color: #30745a;
     padding: 20px;
     margin-left: 0px;
 }
@@ -24,6 +24,8 @@ body {
 .row {
   padding-bottom: 20px;
   margin: 10px;
+  padding-right: 15%;
+  padding-left: 15%;
 }
 
 #nav {
@@ -32,7 +34,6 @@ body {
   margin-top: 0px;
   
 }
-
 
 #date {
   margin-left: 20px;
@@ -64,4 +65,13 @@ hr{
   background-color: #000000;
   color: white;
   display: block;
+}
+
+.content{
+  background-color: rgb(26, 26, 26);
+  text-align: center;
+  margin: 40px;
+  height: 45rem;
+  font-size: 25px;
+  border-radius: 30px;
 }
