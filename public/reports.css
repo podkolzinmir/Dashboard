@@ -44,3 +44,14 @@
   color: white;
   display: block;
 }
+
+
+#date {
+  margin-left: 20px;
+  margin-top: 10px;
+  color: whitesmoke;
+
+}
+hr{
+  border: 1px solid rgb(231, 222, 222);
+}
