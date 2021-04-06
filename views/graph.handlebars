@@ -23,153 +23,157 @@
       <a class="nav-link" style="font-size: 20px" href="./settings">Settings</a>
 
     </ul>
-             <IMG SRC="../public/logo.PNG" ALT="some text" WIDTH=50 HEIGHT=50>
+    <IMG SRC="../public/logo.PNG" ALT="some text" WIDTH=50 HEIGHT=50>
 
   </div>
 </nav>
- <div id="page-container">
-   <div id="content-wrap">
+<div id="page-container">
+  <div id="content-wrap">
 
-{{!-- {{Header}} --}}
-<h4 id="date"> Reports</h4>
-<hr>
+    {{!-- {{Header}} --}}
+    <h4 id="date"> Reports</h4>
+    <hr>
 
-{{!-- {{Graph2}} --}}
-<div style="width: 20%;text-align:center;margin:0 auto; display:block;">
-  <canvas id="myChart2" height="550" width="700"></canvas>
-  <script>
-    //pie chart data
-    //options
-    var options = {
-      responsive: true,
-      title: {
-        display: true,
-        position: "top",
-        text: "Pie Chart",
-        fontSize: 18,
-        fontColor: "#111"
-      },
-      legend: {
-        display: true,
-        position: "bottom",
-        labels: {
-          fontColor: "#333",
-          fontSize: 16
+    {{!-- {{Graph2}} --}}
+    <div style="width: 20%;text-align:center;margin:0 auto; display:block;">
+      <canvas id="myChart2" height="550" width="700"></canvas>
+      <script>
+        //pie chart data
+        //options
+        var options = {
+          responsive: true,
+          title: {
+            display: true,
+            position: "top",
+            text: "Pie Chart",
+            fontSize: 18,
+            fontColor: "#111"
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            labels: {
+              fontColor: "#333",
+              fontSize: 16
+            }
+          }
+        };
+        var data1 = {
+          labels: ["pass", "fail"],
+          datasets: [
+            {
+              label: "Pass vs. Fail",
+              data: [{{ pieArr }}],
+          backgroundColor: [
+            "#2ec973",
+            "#DC143C",
+          ],
+          borderColor: [
+            "#2ec973",
+            "#CB252B",
+          ],
+          borderWidth: [1, 1]
         }
-      }
-    };
-    var data1 = {
-      labels: ["pass", "fail"],
-      datasets: [
-        {
-          label: "Pass vs. Fail",
-          data: [{{ pieArr }}],
-      backgroundColor: [
-        "#2ec973",
-        "#DC143C",
-      ],
-      borderColor: [
-        "#2ec973",
-        "#CB252B",
-      ],
-      borderWidth: [1, 1]
-    }
       ]
     };
-    var ctx = document.getElementById('myChart2');
-    ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
-    var myChart2 = new Chart(ctx, {
-      type: 'pie',
-      data: data1,
-      options: options
-    });
-  </script>
-</div>
-<br />
+        var ctx = document.getElementById('myChart2');
+        ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
+        var myChart2 = new Chart(ctx, {
+          type: 'pie',
+          data: data1,
+          options: options
+        });
+      </script>
+    </div>
+    <br />
 
-{{!-- {{Bar Graph}} --}}
-<div style="width: 20%;text-align:left; margin:0 auto; display:block;">
-  <canvas id="myChart3" height="850" width="1000"></canvas>
-  <script>
-    //pie chart data
-    //options
-    var options = {
-      responsive: true,
-      title: {
-        display: true,
-        position: "top",
-        text: "Pie Chart",
-        fontSize: 18,
-        fontColor: "#111"
-      },
-      legend: {
-        display: true,
-        position: "bottom",
-        labels: {
-          fontColor: "#333",
-          fontSize: 16
+    {{!-- {{Bar Graph}} --}}
+    <div style="width: 20%;text-align:left; margin:0 auto; display:block;">
+      <canvas id="myChart3" height="850" width="1000"></canvas>
+      <script>
+        //pie chart data
+        //options
+        var options = {
+          responsive: true,
+          title: {
+            display: true,
+            position: "top",
+            text: "Pie Chart",
+            fontSize: 18,
+            fontColor: "#111"
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            labels: {
+              fontColor: "#333",
+              fontSize: 16
+            }
+          }
+        };
+        var data2 = {
+          labels: ["Safe", "Probably Safe", "Probably Unsafe", "Unsafe"],
+          datasets: [
+            {
+              label: "Current Safety Outcomes",
+              data: [{{ barArr }}],
+          backgroundColor: [
+            "#2ec973",
+            '#cce6d7',
+            '#f7a8b8',
+            "#DC143C",
+          ],
+          borderColor: [
+            "#2ec973",
+            '#cce6d7',
+            '#f7a8b8',
+            "#DC143C",
+          ],
+          borderWidth: [1, 1]
         }
-      }
-    };
-    var data2 = {
-      labels: ["Safe", "Probably Safe", "Probably Unsafe", "Unsafe"],
-      datasets: [
-        {
-          label: "Current Safety Outcomes",
-          data: [{{ barArr }}],
-      backgroundColor: [
-        "#2ec973",
-        '#cce6d7',
-        '#f7a8b8',
-        "#DC143C",
-      ],
-      borderColor: [
-         "#2ec973",
-        '#cce6d7',
-        '#f7a8b8',
-        "#DC143C",
-      ],
-      borderWidth: [1, 1]
-    }
       ]
     };
-    var ctx = document.getElementById('myChart3');
-    ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
-    var myChart3 = new Chart(ctx, {
-      type: 'bar',
-      data: data2,
-      options: options
-    });
-  </script>
-</div>
-<br />
+        var ctx = document.getElementById('myChart3');
+        ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
+        var myChart3 = new Chart(ctx, {
+          type: 'bar',
+          data: data2,
+          options: options
+        });
+      </script>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
 
-<script>
-  $(document).ready(function () {
-    console.log($("#lmao").text())
-  })
-  $('#graph-info').click(function () {
-    $.ajax({
-      type: 'POST',
-      url: "/graph/test",
-      data: {},
-      success: function (data) {
-        console.log('success')
-      },
-      error: function (data, error, xhr) {
-        console.log('error')
-      },
-      dataType: 'json'
-    });
-  });
-</script>
+    <script>
+      $(document).ready(function () {
+        console.log($("#lmao").text())
+      })
+      $('#graph-info').click(function () {
+        $.ajax({
+          type: 'POST',
+          url: "/graph/test",
+          data: {},
+          success: function (data) {
+            console.log('success')
+          },
+          error: function (data, error, xhr) {
+            console.log('error')
+          },
+          dataType: 'json'
+        });
+      });
+    </script>
 
 
 
-{{!-- {{Footer}} --}}
-</div>
-   <footer id="footer">
-      <p style="margin:7px">The Gaiters <br>
-      <a href="https://github.com/podkolzinmir/Dashboard">gaiters@stevens.edu</a></p> 
+    {{!-- {{Footer}} --}}
+  </div>
+  <footer id="footer">
+    <p style="margin:7px">The Gaiters <br>
+      <a href="https://github.com/podkolzinmir/Dashboard">gaiters@stevens.edu</a>
+    </p>
   </footer>
 </div>
