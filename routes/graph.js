@@ -2,21 +2,17 @@
 
 const express = require("express");
 const router = express.Router();
+const fetcher = require("../config/elephantsql");
 
 router.get("/", async (_, res) => {
-  var data = [
-    9, 3, 5, 2, 3
-  ];
-
-  
-  try {
-    console.log(data);
-    res.render("graph", {
-      data: data,
-    });
-  } catch (e) {
-    res.status(404).json({ error: "Graph page not found" });
-  }
+  const data = await fetcher.getData();
+  res.json(data);
+  // try {
+  //   console.log(data);
+  //   res.render("graph", { data });
+  // } catch (e) {
+  //   res.status(404).json({ error: "Graph page not found" });
+  // }
 });
 
 router.post("/test", async (req, res) => {
