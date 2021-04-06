@@ -1,6 +1,6 @@
 {{!-- {{This is the graph page handlebars}} --}}
 
-<link rel="stylesheet" href="/public/reports.css" >
+<link rel="stylesheet" href="/public/reports.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
@@ -26,168 +26,59 @@
   </div>
 </nav>
 
-<p style="color: aliceblue;"> Data here {{data}} </p>
-
-{{!-- {{Graph1}} --}}
-<div style="width: 20%" >
-<canvas id="myChart" height="450" width="600"></canvas>
-<script>
-var ctx = document.getElementById('myChart');
-ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 2)',
-                'rgba(54, 162, 235, 2)',
-                'rgba(255, 206, 86, 2)',
-                'rgba(75, 192, 192, 2)',
-                'rgba(153, 102, 255, 2)',
-                'rgba(255, 159, 64, 2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                maintainAspectRatio: false,
-                responsive: true
-            }
-        }
-    }
-});
-</script>
-</div>
-
-<br> 
-
 {{!-- {{Graph2}} --}}
-<div style="width: 20%">
-<canvas id="myChart2" height="450" width="600" ></canvas>
-<script>
-var ctx = document.getElementById('myChart2');
-ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
-var myChart2 = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: ['Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [{{data}}],
-            backgroundColor: [
-                'rgba(255, 99, 132, 2)',
-                'rgba(54, 162, 235, 2)',
-                'rgba(255, 206, 86, 2)',
-                'rgba(75, 192, 192, 2)',
-                'rgba(153, 102, 255, 2)',
-                'rgba(255, 159, 64, 2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                maintainAspectRatio: false,
-                responsive: true
-            }
+<div style="width: 20%;text-align:center;margin:0 auto; display:block;">
+  <canvas id="myChart2" height="450" width="600"></canvas>
+  <script>
+    //pie chart data
+    //options
+    var options = {
+      responsive: true,
+      title: {
+        display: true,
+        position: "top",
+        text: "Pie Chart",
+        fontSize: 18,
+        fontColor: "#111"
+      },
+      legend: {
+        display: true,
+        position: "bottom",
+        labels: {
+          fontColor: "#333",
+          fontSize: 16
         }
+      }
+    };
+    var data1 = {
+      labels: ["pass", "fail"],
+      datasets: [
+        {
+          label: "Pass vs. Fail",
+          data: [{{ pieArr }}],
+      backgroundColor: [
+        "#2E8B57",
+        "#DC143C",
+      ],
+      borderColor: [
+        "#1D7A46",
+        "#CB252B",
+      ],
+      borderWidth: [1, 1]
     }
-});
-</script>
+      ]
+    };
+    var ctx = document.getElementById('myChart2');
+    ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
+    var myChart2 = new Chart(ctx, {
+      type: 'pie',
+      data: data1,
+      options: options
+    });
+  </script>
 </div>
-<br/>
-{{!-- {{Graph3}} --}}
-<div style="width: 20%">
-<canvas id="myChart3" height="450" width="600" ></canvas>
-<script>
-var ctx = document.getElementById('myChart3');
-ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
-var myChart3 = new Chart(ctx, {
-    type: 'scatter',
-    data : {
-  datasets: [{
-    label: 'Scatter Dataset',
-    data: [{
-      x: -10,
-      y: 0
-    }, {
-      x: 0,
-      y: 10
-    }, {
-      x: 10,
-      y: 5
-    }, {
-      x: 0.5,
-      y: 5.5
-    }],
-    backgroundColor: 'rgb(255, 99, 132)'
-  }],
-    },
-    options: {
-        scales: {
-            y: {
-                maintainAspectRatio: false,
-                responsive: true
-            }
-        }
-    }
-});
-</script>
-<br/>
-<div style="width: 100%">
-<canvas id="myChart4" height="450" width="600" ></canvas>
-<script>
-var ctx = document.getElementById('myChart4');
-ctx.style.backgroundColor = 'rgba(255,255,255, 8)';
-var myChart4 = new Chart(ctx, {
-    type: 'line',
-    data : {
-  labels: 'yee',
-  datasets: [{
-    label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
-    fill: false,
-    borderColor: 'rgb(75, 192, 192)',
-    tension: 0.1
-  }]
-}
-})
-</script>
-</div>
+<br />
 
-
-<button id="graph-info">Graph Test</button>
-{{#if data}}
-<ul id="lmao" style="color:white;display:none">
-  {{#each data}}
-  <li>{{this.time}}, {{this.val}}</li>
-  {{/each}}
-</ul>
-{{else}}
-<p><em>There is currently no data being sent</em></p>
-{{/if}}
 <script>
   $(document).ready(function () {
     console.log($("#lmao").text())
