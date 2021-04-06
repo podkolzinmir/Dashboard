@@ -5,12 +5,12 @@ const router = express.Router();
 
 router.get("/", async (_, res) => {
   var data = [
-    { time: 1617424498717, val: 39 },
-    { time: 1617424498718, val: 34 },
-    { time: 1617424498719, val: 59 },
-    { time: 1617424498720, val: 80 },
+    9, 3, 5, 2, 3
   ];
+
+  
   try {
+    console.log(data);
     res.render("graph", {
       data: data,
     });
