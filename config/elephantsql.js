@@ -16,11 +16,11 @@ async function getData() {
       if (err) {
         return console.error("error running query", err);
       }
-      console.log("hit");
       return result.rows;
     });
   });
 }
+getData();
 module.exports = {
   getData,
 };
