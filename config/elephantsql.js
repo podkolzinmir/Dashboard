@@ -16,6 +16,7 @@ client.connect(function(err) {
     if(err) {
       return console.error('error running query', err);
     }
+    console.log(result.rows[1]);
     return result.rows[1];
   }
 )};
