@@ -53,3 +53,25 @@ display: inline-flex;
   hr{
     border: 1px solid rgb(231, 222, 222);
   }
+
+  
+#page-container {
+  position: relative;
+  min-height: 92vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4.5rem;            /* Footer height */
+  text-align: center;
+  padding: 2px;
+  background-color: #000000;
+  color: white;
+  display: block;
+}
