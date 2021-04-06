@@ -4,7 +4,7 @@
 
 
 {{!-- {{Navigation bar}} --}}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="nav" class="navbar navbar-expand-lg navbar-dark" style="background-color: #365731;">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,6 +27,7 @@
 <h4 id="date"> Settings - Test Criteria</h4>
 <hr>
 
+<body>
 <div class="middle">
   {{!-- {{Slider 1}} --}}
   <div class="slidecontainer">
@@ -39,10 +40,6 @@
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
     output.innerHTML = slider.value;
-<<<<<<< HEAD
-=======
-
->>>>>>> 818edabdf045417730c14646dd28e89303faf16a
     slider.oninput = function () {
       output.innerHTML = this.value;
     }
@@ -116,7 +113,7 @@
     }
   </script>
 </div>
-
+</body>
 <button id="settings-info">Settings Test</button>
 <script>
   $('#settings-info').click(function () {
