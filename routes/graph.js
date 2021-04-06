@@ -27,10 +27,7 @@ router.get("/", async (_, res) => {
 
   var barArr = [passCount, pSafe, pUnsafe, failCount];
   var pieArr = [passCount, failCount];
-  console.log(pieArr);
-  console.log(barArr);
   try {
-    console.log(data);
     res.render("graph", { data, pieArr, barArr });
   } catch (e) {
     res.status(404).json({ error: "Graph page not found" });
@@ -52,7 +49,6 @@ function fetchData() {
       returnArr.push(dataPoint);
     }
   }
-  console.log(returnArr);
   return returnArr;
 }
 
